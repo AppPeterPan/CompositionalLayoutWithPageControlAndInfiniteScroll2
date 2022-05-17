@@ -49,7 +49,7 @@ class CatCollectionViewController: UICollectionViewController {
             addDataForInfiniteScroll()
             catSections = [orangeCatIds, hatCatIds]
             collectionView.reloadData()
-            collectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .left, animated: false)
+            collectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .centeredHorizontally, animated: false)
             addPageControl()
 
         }
@@ -70,7 +70,7 @@ class CatCollectionViewController: UICollectionViewController {
     }
     
     @objc func changePage(_ sender: UIPageControl) {
-        collectionView.scrollToItem(at: IndexPath(item: sender.currentPage+1, section: 0), at: .left, animated: true)
+        collectionView.scrollToItem(at: IndexPath(item: sender.currentPage+1, section: 0), at: .centeredHorizontally, animated: true)
     }
     
     func generateLayout() -> UICollectionViewLayout {
@@ -107,7 +107,7 @@ class CatCollectionViewController: UICollectionViewController {
                 let realPage = page - 1
                 if pageControl.currentPage != realPage {
                     pageControl.currentPage = realPage
-                    collectionView.scrollToItem(at: IndexPath(item: page, section: 0), at: .left, animated: false)
+                    collectionView.scrollToItem(at: IndexPath(item: page, section: 0), at: .centeredHorizontally, animated: false)
                 }
             }
         }
